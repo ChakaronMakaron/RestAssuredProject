@@ -1,17 +1,16 @@
-package firstPackage;
+package com.lemakhno.mytests;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 
 import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
+// import static io.restassured.matcher.RestAssuredMatchers.*;
+// import static org.hamcrest.Matchers.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -19,11 +18,11 @@ import java.util.logging.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FirstClass {
+public class FirstTestClass {
 
     private static String punkBaseUri = "https://api.punkapi.com/v2";
 
-    private static Logger logger = Logger.getLogger(FirstClass.class.getName());
+    private static Logger logger = Logger.getLogger(FirstTestClass.class.getName());
 
     private static String jsonFileToString(String path) {
 
@@ -42,7 +41,7 @@ public class FirstClass {
     }
     
     @Test
-    public static void test1() {
+    public void test1() {
 
         RestAssured.baseURI = "https://rahulshettyacademy.com";
 
@@ -60,7 +59,7 @@ public class FirstClass {
     }
 
     @Test
-    public static void test2() {
+    public void test2() {
 
         RestAssured.baseURI = punkBaseUri;
 
@@ -90,7 +89,7 @@ public class FirstClass {
     }
 
     @Test
-    public static void test3() {
+    public void test3() {
 
         RestAssured.baseURI = punkBaseUri;
 
@@ -116,7 +115,7 @@ public class FirstClass {
     }
 
     @Test
-    public static void test4() {
+    public void test4() {
 
         String responseBody = jsonFileToString("src/json_examples/complexJson.json");
 
@@ -140,7 +139,7 @@ public class FirstClass {
     }
 
     @Test
-    public static void test5() {
+    public void test5() {
 
         String response = jsonFileToString("src/json_examples/nestedArrays.json");
 
@@ -153,11 +152,13 @@ public class FirstClass {
 
     public static void main(String[] args) {
         
-        // test1();
-        // test2();
-        // test3();
-        test4();
-        // test5();
+        FirstTestClass tests = new FirstTestClass();
+
+        // tests.test1();
+        // tests.test2();
+        // tests.test3();
+        tests.test4();
+        // tests.test5();
 
     }
 }
