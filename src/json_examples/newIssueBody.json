@@ -1,0 +1,13 @@
+{
+    "fields": {
+        "project": {
+            "key": "TP"
+        },
+        "summary": "Java-Created Issue",
+        "description": "DESC",
+        "issuetype": {
+            "id": "10005",
+            "name": "Bug"
+        }
+    }
+}
