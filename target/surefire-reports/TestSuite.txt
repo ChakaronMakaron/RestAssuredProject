@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 5.571 s <<< FAILURE! - in TestSuite
+testAddAttachmentToIssue(com.lemakhno.mytests.JiraTest)  Time elapsed: 0.654 s  <<< FAILURE!
+java.lang.IllegalArgumentException: parameterValue cannot be null
+	at com.lemakhno.mytests.JiraTest.testAddAttachmentToIssue(JiraTest.java:135)
+
+testAddCommentToIssue(com.lemakhno.mytests.JiraTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.IllegalArgumentException: parameterValue cannot be null
+	at com.lemakhno.mytests.JiraTest.testAddCommentToIssue(JiraTest.java:107)
+
+testCreateIssue(com.lemakhno.mytests.JiraTest)  Time elapsed: 0.502 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <400>.
+
+	at com.lemakhno.mytests.JiraTest.testCreateIssue(JiraTest.java:80)
+
+testDeleteIssue(com.lemakhno.mytests.JiraTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.IllegalArgumentException: Header value cannot be null
+	at com.lemakhno.mytests.JiraTest.testDeleteIssue(JiraTest.java:182)
+
+testGetIssueDetails(com.lemakhno.mytests.JiraTest)  Time elapsed: 0.027 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <401>.
+
+	at com.lemakhno.mytests.JiraTest.testGetIssueDetails(JiraTest.java:161)
+
