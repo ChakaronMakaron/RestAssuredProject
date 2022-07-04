@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import io.restassured.filter.session.SessionFilter;
@@ -28,8 +29,8 @@ public class JiraTest {
     private static String issueId;
     // private static String commentId;
 
-    @Test
-    public static void testLogin() {
+    @Test(priority = 1)
+    public void testLogin() {
 
         Map<String, Object> credentials = new HashMap<>();
         credentials.put("username", USERNAME);
@@ -61,8 +62,8 @@ public class JiraTest {
         System.out.println(">>> LOGIN OK");
     }
 
-    @Test
-    public static void testCreateIssue() {
+    @Test(priority = 2)
+    public void testCreateIssue() {
 
         String requestBody = TestUtil.jsonFileToString("src/json_examples/newIssueBody.json");
 
@@ -94,8 +95,8 @@ public class JiraTest {
         System.out.println(">>> CREATE ISSUE OK");
     }
 
-    @Test
-    public static void testAddCommentToIssue() {
+    @Test(priority = 3)
+    public void testAddCommentToIssue() {
 
         Map<String, Object> reqBody = new HashMap<>();
         reqBody.put("body", "Comment from Rest-Assured");
@@ -124,8 +125,8 @@ public class JiraTest {
         System.out.println(">>> ADD COMMENT TO ISSUE OK");
     }
 
-    @Test
-    public static void testAddAttachmentToIssue() {
+    @Test(priority = 4)
+    public void testAddAttachmentToIssue() {
 
         given()
             .contentType(ContentType.MULTIPART)
@@ -144,7 +145,8 @@ public class JiraTest {
     }
 
     @Test
-    public static void testGetIssueDetails() {
+    @Ignore
+    public void testGetIssueDetails() {
 
         String id = "10015";
 
@@ -173,8 +175,8 @@ public class JiraTest {
         System.out.println(">>> ADD ATTACHMENT TO ISSUE OK");
     }
 
-    @Test
-    public static void testDeleteIssue() {
+    @Test(priority = 5)
+    public void testDeleteIssue() {
 
         given()
             .contentType(ContentType.JSON)
@@ -193,12 +195,12 @@ public class JiraTest {
 
     public static void main(String[] args) {
         
-        testLogin();
+        // testLogin();
         // testCreateIssue();
         // testAddCommentToIssue();
         // testAddAttachmentToIssue();
-        testGetIssueDetails();
-        // . . .
+        // // testGetIssueDetails();
+        // // . . .
         // testDeleteIssue();
     }
 }
