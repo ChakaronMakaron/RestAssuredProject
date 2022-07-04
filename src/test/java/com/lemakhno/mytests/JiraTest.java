@@ -27,7 +27,7 @@ public class JiraTest {
     private static String authCookie;
 
     private static String issueId;
-    // private static String commentId;
+    private static String commentId;
 
     @Test(priority = 1)
     public void testLogin() {
@@ -120,12 +120,68 @@ public class JiraTest {
 
         Assert.assertNotNull(newCommentId);
 
-        // commentId = newCommentId;
+        commentId = newCommentId;
 
         System.out.println(">>> ADD COMMENT TO ISSUE OK");
     }
 
+    // TEST UPDATE COMMENT
     @Test(priority = 4)
+    public void testUpdateComment() {
+
+        String newCommentText = "Comment from Rest-Assured -> UPDATED";
+
+        Map<String, Object> reqBody = new HashMap<>();
+        reqBody.put("body", newCommentText);
+
+        Response response =
+        given()
+            .contentType(ContentType.JSON)
+            .accept(ContentType.JSON)
+            .pathParam("issueId", issueId)
+            .pathParam("commentId", commentId)
+            .body(reqBody)
+            .filter(sessionFilter)
+        .when()
+            .put(BASE_URL + "/rest/api/2/issue/{issueId}/comment/{commentId}")
+        .then()
+            .assertThat()
+            .statusCode(200)
+        .extract()
+            .response();
+
+        String updatedCommentId = response.jsonPath().getString("id");
+        String updatedCommentText = response.jsonPath().getString("body");
+
+        Assert.assertEquals(updatedCommentId, commentId);
+        Assert.assertEquals(updatedCommentText, newCommentText);
+
+        System.out.println(">>> UPDATE COMMENT OK");
+    }
+
+    @Test(priority = 5)
+    public void testDeleteCommentFromIssue() {
+
+        System.out.println(">>> DELETING ISSUE " + issueId + " COMMENT " + commentId);
+
+        given()
+            .contentType(ContentType.JSON)
+            .accept(ContentType.JSON)
+            .pathParam("issueId", issueId)
+            .pathParam("commentId", commentId)
+            .filter(sessionFilter)
+        .when()
+            .delete(BASE_URL + "/rest/api/2/issue/{issueId}/comment/{commentId}")
+        .then()
+            .assertThat()
+            .statusCode(204)
+        .extract()
+            .response();
+
+        System.out.println(">>> DELETE COMMENT OK");
+    }
+
+    @Test(priority = 6)
     public void testAddAttachmentToIssue() {
 
         given()
@@ -175,7 +231,7 @@ public class JiraTest {
         System.out.println(">>> ADD ATTACHMENT TO ISSUE OK");
     }
 
-    @Test(priority = 5)
+    @Test(priority = 7)
     public void testDeleteIssue() {
 
         given()
@@ -195,13 +251,17 @@ public class JiraTest {
 
     public static void main(String[] args) {
         
-        // testLogin();
-        // testCreateIssue();
-        // testAddCommentToIssue();
-        // testAddAttachmentToIssue();
+        // JiraTest jiraTest = new JiraTest();
+
+        // jiraTest.testLogin();
+        // jiraTest.testCreateIssue();
+        // jiraTest.testAddCommentToIssue();
+        // jiraTest.testUpdateComment();
+        // jiraTest.testDeleteCommentFromIssue();
+        // jiraTest.testAddAttachmentToIssue();
         // // testGetIssueDetails();
         // // . . .
-        // testDeleteIssue();
+        // jiraTest.testDeleteIssue();
     }
 }
 

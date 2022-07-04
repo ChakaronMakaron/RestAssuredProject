@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
@@ -27,7 +28,7 @@ public class LibraryTest {
     }
     
     @Test
-    public static void testCreateNewBook() {
+    public void testCreateNewBook() {
 
         String requestBody = TestUtil.jsonFileToString("src/json_examples/newBookBody.json");
 
@@ -82,7 +83,8 @@ public class LibraryTest {
     }
 
     @Test
-    public static void testGetBooksByAuthorName() {
+    @Ignore
+    public void testGetBooksByAuthorName() {
 
         String response =
         given()
