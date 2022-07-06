@@ -47,6 +47,10 @@ public class LibraryTest {
             .asString();
 
         JsonPath jsonPath = new JsonPath(response);
+
+        Map<String, Object> test = jsonPath.get();
+        System.out.println("!!! " + test);
+
         String message = jsonPath.getString("Msg");
         String id = jsonPath.getString("ID");
 

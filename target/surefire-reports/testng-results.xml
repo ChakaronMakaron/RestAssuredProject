@@ -1,91 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-04T01:41:06 EEST" name="Surefire suite" finished-at="2022-07-04T01:41:11 EEST" duration-ms="5611">
+  <suite started-at="2022-07-07T01:23:37 EEST" name="suite1" finished-at="2022-07-07T01:23:39 EEST" duration-ms="2267">
     <groups>
     </groups>
-    <test started-at="2022-07-04T01:41:06 EEST" name="Surefire test" finished-at="2022-07-04T01:41:11 EEST" duration-ms="5611">
+    <test started-at="2022-07-07T01:23:37 EEST" name="jirafulltest" finished-at="2022-07-07T01:23:39 EEST" duration-ms="2267">
       <class name="com.lemakhno.mytests.JiraTest">
-        <test-method signature="testLogin()[pri:1, instance:com.lemakhno.mytests.JiraTest@557caf28]" started-at="2022-07-04T01:41:06 EEST" name="testLogin" finished-at="2022-07-04T01:41:08 EEST" duration-ms="1710" status="PASS">
+        <test-method signature="testLogin()[pri:1, instance:com.lemakhno.mytests.JiraTest@2b4bac49]" started-at="2022-07-07T01:23:37 EEST" name="testLogin" finished-at="2022-07-07T01:23:38 EEST" duration-ms="1762" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method signature="testCreateIssue()[pri:2, instance:com.lemakhno.mytests.JiraTest@557caf28]" started-at="2022-07-04T01:41:08 EEST" name="testCreateIssue" finished-at="2022-07-04T01:41:08 EEST" duration-ms="68" status="PASS">
+        <test-method signature="testCreateIssue()[pri:2, instance:com.lemakhno.mytests.JiraTest@2b4bac49]" started-at="2022-07-07T01:23:38 EEST" name="testCreateIssue" finished-at="2022-07-07T01:23:39 EEST" duration-ms="79" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateIssue -->
-        <test-method signature="testAddCommentToIssue()[pri:3, instance:com.lemakhno.mytests.JiraTest@557caf28]" started-at="2022-07-04T01:41:08 EEST" name="testAddCommentToIssue" finished-at="2022-07-04T01:41:08 EEST" duration-ms="56" status="PASS">
+        <test-method signature="testAddCommentToIssue()[pri:3, instance:com.lemakhno.mytests.JiraTest@2b4bac49]" started-at="2022-07-07T01:23:39 EEST" name="testAddCommentToIssue" finished-at="2022-07-07T01:23:39 EEST" duration-ms="58" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddCommentToIssue -->
-        <test-method signature="testAddAttachmentToIssue()[pri:4, instance:com.lemakhno.mytests.JiraTest@557caf28]" started-at="2022-07-04T01:41:08 EEST" name="testAddAttachmentToIssue" finished-at="2022-07-04T01:41:08 EEST" duration-ms="160" status="PASS">
+        <test-method signature="testUpdateComment()[pri:4, instance:com.lemakhno.mytests.JiraTest@2b4bac49]" started-at="2022-07-07T01:23:39 EEST" name="testUpdateComment" finished-at="2022-07-07T01:23:39 EEST" duration-ms="76" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateComment -->
+        <test-method signature="testDeleteCommentFromIssue()[pri:5, instance:com.lemakhno.mytests.JiraTest@2b4bac49]" started-at="2022-07-07T01:23:39 EEST" name="testDeleteCommentFromIssue" finished-at="2022-07-07T01:23:39 EEST" duration-ms="40" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteCommentFromIssue -->
+        <test-method signature="testAddAttachmentToIssue()[pri:6, instance:com.lemakhno.mytests.JiraTest@2b4bac49]" started-at="2022-07-07T01:23:39 EEST" name="testAddAttachmentToIssue" finished-at="2022-07-07T01:23:39 EEST" duration-ms="134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddAttachmentToIssue -->
-        <test-method signature="testDeleteIssue()[pri:5, instance:com.lemakhno.mytests.JiraTest@557caf28]" started-at="2022-07-04T01:41:08 EEST" name="testDeleteIssue" finished-at="2022-07-04T01:41:08 EEST" duration-ms="99" status="PASS">
+        <test-method signature="testDeleteIssue()[pri:7, instance:com.lemakhno.mytests.JiraTest@2b4bac49]" started-at="2022-07-07T01:23:39 EEST" name="testDeleteIssue" finished-at="2022-07-07T01:23:39 EEST" duration-ms="89" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteIssue -->
       </class> <!-- com.lemakhno.mytests.JiraTest -->
-      <class name="com.lemakhno.mytests.LibraryTest">
-        <test-method signature="testBulkBooksCreation(java.lang.String,java.lang.String)[pri:0, instance:com.lemakhno.mytests.LibraryTest@44c03695]" started-at="2022-07-04T01:41:08 EEST" name="testBulkBooksCreation" data-provider="BulkBooksCreation" finished-at="2022-07-04T01:41:09 EEST" duration-ms="708" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[11]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[11]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBulkBooksCreation -->
-        <test-method signature="testBulkBooksCreation(java.lang.String,java.lang.String)[pri:0, instance:com.lemakhno.mytests.LibraryTest@44c03695]" started-at="2022-07-04T01:41:09 EEST" name="testBulkBooksCreation" data-provider="BulkBooksCreation" finished-at="2022-07-04T01:41:09 EEST" duration-ms="726" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[22]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[22]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBulkBooksCreation -->
-        <test-method signature="testBulkBooksCreation(java.lang.String,java.lang.String)[pri:0, instance:com.lemakhno.mytests.LibraryTest@44c03695]" started-at="2022-07-04T01:41:09 EEST" name="testBulkBooksCreation" data-provider="BulkBooksCreation" finished-at="2022-07-04T01:41:10 EEST" duration-ms="660" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[33]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[33]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBulkBooksCreation -->
-        <test-method signature="testCreateNewBook()[pri:0, instance:com.lemakhno.mytests.LibraryTest@44c03695]" started-at="2022-07-04T01:41:10 EEST" name="testCreateNewBook" finished-at="2022-07-04T01:41:11 EEST" duration-ms="691" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreateNewBook -->
-        <test-method signature="testGetBooksByAuthorName()[pri:0, instance:com.lemakhno.mytests.LibraryTest@44c03695]" started-at="2022-07-04T01:41:11 EEST" name="testGetBooksByAuthorName" finished-at="2022-07-04T01:41:11 EEST" duration-ms="697" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetBooksByAuthorName -->
-      </class> <!-- com.lemakhno.mytests.LibraryTest -->
-    </test> <!-- Surefire test -->
-  </suite> <!-- Surefire suite -->
+    </test> <!-- jirafulltest -->
+  </suite> <!-- suite1 -->
 </testng-results>

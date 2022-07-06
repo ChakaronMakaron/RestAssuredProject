@@ -14,13 +14,18 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
+import com.lemakhno.mytests.entity.libraryentity.BookCreationRequest;
 import com.lemakhno.mytests.entity.libraryentity.BookCreationResponse;
 import com.lemakhno.mytests.entity.libraryentity.BookDeletingResponse;
 
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.path.json.JsonPath;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 
 public class LibraryTestSerialDeserial {
 
@@ -39,12 +44,75 @@ public class LibraryTestSerialDeserial {
     @Test
     public void testCreateNewBook() {
 
-        String requestBody = TestUtil.jsonFileToString("src/json_examples/newBookBody.json");
+        BookCreationRequest requestBody = new BookCreationRequest();
+        requestBody.setName("NewBook");
+        requestBody.setIsbn("333");
+        requestBody.setAisle("12");
+        requestBody.setAuthor("LeMakhno");
+
+        RequestSpecification requestSpec = new RequestSpecBuilder()
+            .setContentType(ContentType.JSON)
+            .setAccept(ContentType.JSON)
+            .build();
+
+        ResponseSpecification responseSpec = new ResponseSpecBuilder()
+            .expectStatusCode(200)
+            .build();
+
+        RequestSpecification request = given()
+            .log().all()
+            .spec(requestSpec)
+            .body(requestBody);
+
+        BookCreationResponse response = request.when().post("/Library/Addbook.php")
+            .then()
+            .spec(responseSpec)
+            .extract().response().as(BookCreationResponse.class);
+
+        String message = response.getMsg();
+        String newBookId = response.getId();
+
+        Assert.assertEquals(message, "successfully added");
+        Assert.assertNotNull(newBookId, "created book id MUST NOT be NULL");
+
+        System.out.println(">>> TEST CREATE BOOK PASSED");
+
+        Map<String, Object> deleteRequestBody = new HashMap<>();
+        deleteRequestBody.put("ID", newBookId);
+
+        BookDeletingResponse deleteResponse =
+        given().log().all()
+            .contentType(ContentType.JSON)
+            .accept(ContentType.JSON)
+            .body(deleteRequestBody, ObjectMapperType.JACKSON_2)
+        .when()
+            .post("/Library/DeleteBook.php")
+        .then().log().all()
+            .spec(responseSpec)
+        .extract()
+            .response()
+            .as(BookDeletingResponse.class);
+
+        String deleteMessage = deleteResponse.getMsg();
+
+        Assert.assertEquals(deleteMessage, "book is successfully deleted");
+
+        System.out.println(">>> SUCCESSFULLY DELETED BOOK");
+    }
+
+    @Test
+    public void testSpecBuilder() {
+
+        BookCreationRequest requestBody = new BookCreationRequest();
+        requestBody.setName("NewBook");
+        requestBody.setIsbn("333");
+        requestBody.setAisle("12");
+        requestBody.setAuthor("LeMakhno");
 
         BookCreationResponse response =
         given().log().all()
             .contentType(ContentType.JSON)
-            .accept(ContentType.JSON)
+            .accept(ContentType.ANY)
             .body(requestBody)
         .when()
             .post("/Library/Addbook.php")

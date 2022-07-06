@@ -50,8 +50,8 @@ public class JiraTest {
         .extract()
             .response();
 
-        String sessionName = response.jsonPath().getString("session.name");
-        String value = response.jsonPath().getString("session.value");
+        String sessionName = response.jsonPath().getString("session.name"); //JSESSIONID
+        String value = response.jsonPath().getString("session.value"); // Hash
 
         String cookie = sessionName + "=" + value;
 

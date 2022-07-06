@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "testng-1.0.dtd" >
+
+<suite name="suite1">
+    <test name="jirafulltest">
+        <classes>
+            <class name="com.lemakhno.mytests.JiraTest"></class>
+        </classes>
+    </test>
+</suite>
