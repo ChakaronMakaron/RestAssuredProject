@@ -9,22 +9,31 @@ import java.util.List;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
+import com.lemakhno.mytests.entity.libraryentity.BookCreationResponse;
+import com.lemakhno.mytests.entity.libraryentity.BookDeletingResponse;
+
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.mapper.ObjectMapperType;
 import io.restassured.path.json.JsonPath;
 
-public class LibraryTest {
+public class LibraryTestSerialDeserial {
 
     private static final String BASE_URL = "http://216.10.245.166";
-
-    private static String newBookId;
 
     @DataProvider(name = "BulkBooksCreation")
     public String[][] getData() {
         return new String[][] {{"11", "11"}, {"22", "22"}, {"33", "33"}};
+    }
+
+    @BeforeMethod
+    public void setUp() {
+        RestAssured.baseURI = BASE_URL;
     }
     
     @Test
@@ -32,50 +41,46 @@ public class LibraryTest {
 
         String requestBody = TestUtil.jsonFileToString("src/json_examples/newBookBody.json");
 
-        String response =
-        given()
+        BookCreationResponse response =
+        given().log().all()
             .contentType(ContentType.JSON)
             .accept(ContentType.JSON)
             .body(requestBody)
         .when()
-            .post(BASE_URL + "/Library/Addbook.php")
+            .post("/Library/Addbook.php")
         .then().log().all()
             .assertThat()
             .statusCode(200)
         .extract()
             .response()
-            .asString();
+            .as(BookCreationResponse.class);
 
-        JsonPath jsonPath = new JsonPath(response);
-        String message = jsonPath.getString("Msg");
-        String id = jsonPath.getString("ID");
+        String message = response.getMsg();
+        String newBookId = response.getId();
 
         Assert.assertEquals(message, "successfully added");
-        Assert.assertNotNull(id, "created book id MUST NOT be NULL");
-
-        newBookId = id;
+        Assert.assertNotNull(newBookId, "created book id MUST NOT be NULL");
 
         System.out.println(">>> TEST CREATE BOOK PASSED");
 
         Map<String, Object> deleteRequestBody = new HashMap<>();
         deleteRequestBody.put("ID", newBookId);
 
-        String deleteResponse =
-        given()
+        BookDeletingResponse deleteResponse =
+        given().log().all()
             .contentType(ContentType.JSON)
             .accept(ContentType.JSON)
-            .body(deleteRequestBody)
+            .body(deleteRequestBody, ObjectMapperType.JACKSON_2)
         .when()
-            .post(BASE_URL + "/Library/DeleteBook.php")
-        .then()
+            .post("/Library/DeleteBook.php")
+        .then().log().all()
             .assertThat()
             .statusCode(200)
         .extract()
             .response()
-            .asString();
+            .as(BookDeletingResponse.class);
 
-        JsonPath deleteRequestJsonPath = new JsonPath(deleteResponse);
-        String deleteMessage = deleteRequestJsonPath.getString("msg");
+        String deleteMessage = deleteResponse.getMsg();
 
         Assert.assertEquals(deleteMessage, "book is successfully deleted");
 
@@ -168,7 +173,6 @@ public class LibraryTest {
         // testCreateNewBook();
 
         // testGetBooksByAuthorName();
-        
     }
 }
 
