@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,8 +39,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-suite1" class="navigator-link">
-              <span class="suite-name border-passed">suite1</span>
+            <a href="#" panel-name="suite-suite3" class="navigator-link">
+              <span class="suite-name border-failed">suite3</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-suite1" class="navigator-link ">
-                    <span>F:\JABA\restassuredproject\testconfig\testRun1.xml</span>
+                  <a href="#" panel-name="test-xml-suite3" class="navigator-link ">
+                    <span>F:\JABA\restassuredproject\testconfig\testRunForPractice.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-suite1" class="navigator-link ">
+                  <a href="#" panel-name="testlist-suite3" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-suite1" class="navigator-link ">
-                    <span>0 groups</span>
+                  <a href="#" panel-name="group-suite3" class="navigator-link ">
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-suite1" class="navigator-link ">
+                  <a href="#" panel-name="times-suite3" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-suite1" class="navigator-link ">
+                  <a href="#" panel-name="reporter-suite3" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-suite1" class="navigator-link ">
+                  <a href="#" panel-name="ignored-methods-suite3" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-suite1" class="navigator-link ">
+                  <a href="#" panel-name="chronological-suite3" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -93,51 +93,89 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">11 methods, 2 failed,  6 skipped,  3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-suite3" class="hide-methods failed suite-suite3"> (hide)</a> <!-- hide-methods failed suite-suite3 -->
+                      <a href="#" panel-name="suite-suite3" class="show-methods failed suite-suite3"> (show)</a> <!-- show-methods failed suite-suite3 -->
+                    </span>
+                    <div class="method-list-content failed suite-suite3">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test3">test3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test4">test4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-suite3 -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Retried methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-suite3" class="hide-methods skipped suite-suite3"> (hide)</a> <!-- hide-methods skipped suite-suite3 -->
+                      <a href="#" panel-name="suite-suite3" class="show-methods skipped suite-suite3"> (show)</a> <!-- show-methods skipped suite-suite3 -->
+                    </span>
+                    <div class="method-list-content skipped suite-suite3">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test3">test3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test3">test3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test3">test3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test4">test4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test4">test4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test4">test4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-suite3 -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-suite1" class="hide-methods passed suite-suite1"> (hide)</a> <!-- hide-methods passed suite-suite1 -->
-                      <a href="#" panel-name="suite-suite1" class="show-methods passed suite-suite1"> (show)</a> <!-- show-methods passed suite-suite1 -->
+                      <a href="#" panel-name="suite-suite3" class="hide-methods passed suite-suite3"> (hide)</a> <!-- hide-methods passed suite-suite3 -->
+                      <a href="#" panel-name="suite-suite3" class="show-methods passed suite-suite3"> (show)</a> <!-- show-methods passed suite-suite3 -->
                     </span>
-                    <div class="method-list-content passed suite-suite1">
+                    <div class="method-list-content passed suite-suite3">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite1" title="com.lemakhno.mytests.JiraTest" class="method navigator-link" hash-for-method="testAddAttachmentToIssue">testAddAttachmentToIssue</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="parametrizedTest(Ivan)">parametrizedTest(Ivan)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite1" title="com.lemakhno.mytests.JiraTest" class="method navigator-link" hash-for-method="testAddCommentToIssue">testAddCommentToIssue</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test1">test1</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite1" title="com.lemakhno.mytests.JiraTest" class="method navigator-link" hash-for-method="testCreateIssue">testCreateIssue</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-suite3" title="com.lemakhno.mytests.TestsForPractice" class="method navigator-link" hash-for-method="test2">test2</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite1" title="com.lemakhno.mytests.JiraTest" class="method navigator-link" hash-for-method="testDeleteCommentFromIssue">testDeleteCommentFromIssue</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite1" title="com.lemakhno.mytests.JiraTest" class="method navigator-link" hash-for-method="testDeleteIssue">testDeleteIssue</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite1" title="com.lemakhno.mytests.JiraTest" class="method navigator-link" hash-for-method="testLogin">testLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite1" title="com.lemakhno.mytests.JiraTest" class="method navigator-link" hash-for-method="testUpdateComment">testUpdateComment</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-suite1 -->
+                    </div> <!-- method-list-content passed suite-suite3 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -148,203 +186,333 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-suite1" class="panel suite1">
-          <div class="suite-suite1-class-passed">
+        <div panel-name="suite-suite3" class="panel suite3">
+          <div class="suite-suite3-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.lemakhno.mytests.JiraTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.lemakhno.mytests.TestsForPractice</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testAddAttachmentToIssue">
-                  </a> <!-- testAddAttachmentToIssue -->
-                  <span class="method-name">testAddAttachmentToIssue</span>
+                  <a name="test3">
+                  </a> <!-- test3 -->
+                  <span class="method-name">test3</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test3(TestsForPractice.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testAddCommentToIssue">
-                  </a> <!-- testAddCommentToIssue -->
-                  <span class="method-name">testAddCommentToIssue</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCreateIssue">
-                  </a> <!-- testCreateIssue -->
-                  <span class="method-name">testCreateIssue</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testDeleteCommentFromIssue">
-                  </a> <!-- testDeleteCommentFromIssue -->
-                  <span class="method-name">testDeleteCommentFromIssue</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testDeleteIssue">
-                  </a> <!-- testDeleteIssue -->
-                  <span class="method-name">testDeleteIssue</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testLogin">
-                  </a> <!-- testLogin -->
-                  <span class="method-name">testLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testUpdateComment">
-                  </a> <!-- testUpdateComment -->
-                  <span class="method-name">testUpdateComment</span>
+                  <a name="test4">
+                  </a> <!-- test4 -->
+                  <span class="method-name">test4</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test4(TestsForPractice.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-suite1-class-passed -->
-        </div> <!-- panel suite1 -->
-        <div panel-name="test-xml-suite1" class="panel">
+          </div> <!-- suite-suite3-class-failed -->
+          <div class="suite-suite3-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.lemakhno.mytests.TestsForPractice</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test3">
+                  </a> <!-- test3 -->
+                  <span class="method-name">test3</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test3(TestsForPractice.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test3">
+                  </a> <!-- test3 -->
+                  <span class="method-name">test3</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test3(TestsForPractice.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test3">
+                  </a> <!-- test3 -->
+                  <span class="method-name">test3</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test3(TestsForPractice.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test4">
+                  </a> <!-- test4 -->
+                  <span class="method-name">test4</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test4(TestsForPractice.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test4">
+                  </a> <!-- test4 -->
+                  <span class="method-name">test4</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test4(TestsForPractice.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test4">
+                  </a> <!-- test4 -->
+                  <span class="method-name">test4</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test4(TestsForPractice.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-suite3-class-skipped -->
+          <div class="suite-suite3-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.lemakhno.mytests.TestsForPractice</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="parametrizedTest(Ivan)">
+                  </a> <!-- parametrizedTest(Ivan) -->
+                  <span class="method-name">parametrizedTest</span>
+                  <span class="parameters">(Ivan)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test1">
+                  </a> <!-- test1 -->
+                  <span class="method-name">test1</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test2">
+                  </a> <!-- test2 -->
+                  <span class="method-name">test2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-suite3-class-passed -->
+        </div> <!-- panel suite3 -->
+        <div panel-name="test-xml-suite3" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">F:\JABA\restassuredproject\testconfig\testRun1.xml</span>
+            <span class="header-content">F:\JABA\restassuredproject\testconfig\testRunForPractice.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;suite1&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;jirafulltest&quot; verbose=&quot;0&quot;&gt;
+&lt;suite name=&quot;suite3&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;test3&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;name&quot; value=&quot;Ivan&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.lemakhno.mytests.JiraTest&quot;/&gt;
+      &lt;class name=&quot;com.lemakhno.mytests.TestsForPractice&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- jirafulltest --&gt;
-&lt;/suite&gt; &lt;!-- suite1 --&gt;
+  &lt;/test&gt; &lt;!-- test3 --&gt;
+&lt;/suite&gt; &lt;!-- suite3 --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-suite1" class="panel">
+        <div panel-name="testlist-suite3" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for suite1</span>
+            <span class="header-content">Tests for suite3</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">jirafulltest (1 class)</span>
+                <span class="test-name">test3 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-suite1" class="panel">
+        <div panel-name="group-suite3" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for suite1</span>
+            <span class="header-content">Groups for suite3</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">parametrized</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">parametrizedTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-suite1" class="panel">
+        <div panel-name="times-suite3" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for suite1</span>
+            <span class="header-content">Times for suite3</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_suite1');
-function tableData_suite1() {
+suiteTableInitFunctions.push('tableData_suite3');
+function tableData_suite3() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(11);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testLogin')
-data.setCell(0, 2, 'com.lemakhno.mytests.JiraTest')
-data.setCell(0, 3, 1762);
+data.setCell(0, 1, 'parametrizedTest')
+data.setCell(0, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(0, 3, 8);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testAddAttachmentToIssue')
-data.setCell(1, 2, 'com.lemakhno.mytests.JiraTest')
-data.setCell(1, 3, 134);
+data.setCell(1, 1, 'test1')
+data.setCell(1, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(1, 3, 1);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testDeleteIssue')
-data.setCell(2, 2, 'com.lemakhno.mytests.JiraTest')
-data.setCell(2, 3, 89);
+data.setCell(2, 1, 'test4')
+data.setCell(2, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(2, 3, 1);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testCreateIssue')
-data.setCell(3, 2, 'com.lemakhno.mytests.JiraTest')
-data.setCell(3, 3, 79);
+data.setCell(3, 1, 'test2')
+data.setCell(3, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(3, 3, 0);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testUpdateComment')
-data.setCell(4, 2, 'com.lemakhno.mytests.JiraTest')
-data.setCell(4, 3, 76);
+data.setCell(4, 1, 'test3')
+data.setCell(4, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(4, 3, 0);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testAddCommentToIssue')
-data.setCell(5, 2, 'com.lemakhno.mytests.JiraTest')
-data.setCell(5, 3, 58);
+data.setCell(5, 1, 'test4')
+data.setCell(5, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(5, 3, 0);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testDeleteCommentFromIssue')
-data.setCell(6, 2, 'com.lemakhno.mytests.JiraTest')
-data.setCell(6, 3, 40);
-window.suiteTableData['suite1']= { tableData: data, tableDiv: 'times-div-suite1'}
+data.setCell(6, 1, 'test3')
+data.setCell(6, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(6, 3, 0);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'test3')
+data.setCell(7, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(7, 3, 0);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'test4')
+data.setCell(8, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(8, 3, 0);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'test4')
+data.setCell(9, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(9, 3, 0);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'test3')
+data.setCell(10, 2, 'com.lemakhno.mytests.TestsForPractice')
+data.setCell(10, 3, 0);
+window.suiteTableData['suite3']= { tableData: data, tableDiv: 'times-div-suite3'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
-              <div id="times-div-suite1">
-              </div> <!-- times-div-suite1 -->
+              <span class="suite-total-time">Total running time: 10 ms</span>
+              <div id="times-div-suite3">
+              </div> <!-- times-div-suite3 -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-suite1" class="panel">
+        <div panel-name="reporter-suite3" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for suite1</span>
+            <span class="header-content">Reporter output for suite3</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-suite1" class="panel">
+        <div panel-name="ignored-methods-suite3" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-suite1" class="panel">
+        <div panel-name="chronological-suite3" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.lemakhno.mytests.JiraTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.lemakhno.mytests.TestsForPractice</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testLogin</span>
+                <span class="method-name">parametrizedTest(Ivan)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testCreateIssue</span>
-                <span class="method-start">1764 ms</span>
+                <span class="method-name">test1</span>
+                <span class="method-start">10 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testAddCommentToIssue</span>
-                <span class="method-start">1843 ms</span>
+                <span class="method-name">test2</span>
+                <span class="method-start">12 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testUpdateComment</span>
-                <span class="method-start">1901 ms</span>
+                <span class="method-name">test3</span>
+                <span class="method-start">12 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testDeleteCommentFromIssue</span>
-                <span class="method-start">1977 ms</span>
+                <span class="method-name">test3</span>
+                <span class="method-start">13 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testAddAttachmentToIssue</span>
-                <span class="method-start">2018 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test3</span>
+                <span class="method-start">13 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testDeleteIssue</span>
-                <span class="method-start">2152 ms</span>
+                <span class="method-name">test3</span>
+                <span class="method-start">13 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test4</span>
+                <span class="method-start">25 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test4</span>
+                <span class="method-start">26 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test4</span>
+                <span class="method-start">26 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test4</span>
+                <span class="method-start">26 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

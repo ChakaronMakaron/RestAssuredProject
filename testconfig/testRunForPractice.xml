@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "testng-1.0.dtd" >
+
+<suite name="suite3">
+    <test name="test3">
+        <parameter name="name" value="Ivan"/>
+
+        <classes>
+            <class name="com.lemakhno.mytests.TestsForPractice"/>
+        </classes>
+    </test>
+</suite>

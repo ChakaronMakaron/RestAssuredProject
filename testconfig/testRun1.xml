@@ -1,7 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "testng-1.0.dtd" >
 
 <suite name="suite1">
     <test name="jirafulltest">
+        <groups>
+            <run>
+                <include name="Login" />
+            </run>
+        </groups>
+
         <classes>
             <class name="com.lemakhno.mytests.JiraTest"></class>
         </classes>

@@ -1,5 +1,7 @@
 package com.lemakhno.mytests;
 
+import static io.restassured.RestAssured.given;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,8 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.testng.annotations.Test;
-
-import static io.restassured.RestAssured.*;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,9 +21,10 @@ import com.lemakhno.mytests.entity.serializationbigbody.Location;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
+@Test(groups = {"dummytests"})
 public class SerialDeserialSimpleTest {
     
-    @Test
+    @Test(groups = {"IOtests"})
     public void test1() throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -44,7 +45,7 @@ public class SerialDeserialSimpleTest {
         });
     }
 
-    @Test
+    @Test(groups = {"IOtests"})
     public void test2() {
 
         String response = TestUtil.jsonFileToString("src/json_examples/rahulCoursesJson.json");
@@ -53,7 +54,7 @@ public class SerialDeserialSimpleTest {
         System.out.println(body);
     }
 
-    @Test
+    @Test(groups = {"IOtests"})
     public void test3() throws JsonProcessingException {
 
         Integer[] intArr = {1, 2, 3, 4, 5};
@@ -68,7 +69,7 @@ public class SerialDeserialSimpleTest {
         System.out.println(objectMapper.writeValueAsString(bodyMap));
     }
 
-    @Test(description = "Helloy dis is description")
+    @Test(groups = {"normtests"})
     public void test4() {
 
         RestAssured.baseURI = "https://www.google.com";
@@ -79,7 +80,7 @@ public class SerialDeserialSimpleTest {
             .get();
     }
 
-    @Test
+    @Test(groups = {"normtests"})
     public void test5() throws JsonProcessingException {
 
         ObjectMapper objectMapper = new ObjectMapper();

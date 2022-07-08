@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import io.restassured.filter.session.SessionFilter;
@@ -62,7 +61,7 @@ public class JiraTest {
         System.out.println(">>> LOGIN OK");
     }
 
-    @Test(priority = 2)
+    @Test(dependsOnMethods = {"testLogin"})
     public void testCreateIssue() {
 
         String requestBody = TestUtil.jsonFileToString("src/json_examples/newIssueBody.json");
@@ -95,7 +94,7 @@ public class JiraTest {
         System.out.println(">>> CREATE ISSUE OK");
     }
 
-    @Test(priority = 3)
+    @Test(dependsOnMethods = {"testCreateIssue"})
     public void testAddCommentToIssue() {
 
         Map<String, Object> reqBody = new HashMap<>();
@@ -126,7 +125,7 @@ public class JiraTest {
     }
 
     // TEST UPDATE COMMENT
-    @Test(priority = 4)
+    @Test(dependsOnMethods = {"testAddCommentToIssue"})
     public void testUpdateComment() {
 
         String newCommentText = "Comment from Rest-Assured -> UPDATED";
@@ -159,7 +158,7 @@ public class JiraTest {
         System.out.println(">>> UPDATE COMMENT OK");
     }
 
-    @Test(priority = 5)
+    @Test(dependsOnMethods = {"testUpdateComment", "testAddCommentToIssue"})
     public void testDeleteCommentFromIssue() {
 
         System.out.println(">>> DELETING ISSUE " + issueId + " COMMENT " + commentId);
@@ -181,7 +180,7 @@ public class JiraTest {
         System.out.println(">>> DELETE COMMENT OK");
     }
 
-    @Test(priority = 6)
+    @Test(dependsOnMethods = {"testCreateIssue"})
     public void testAddAttachmentToIssue() {
 
         given()
@@ -200,8 +199,7 @@ public class JiraTest {
         System.out.println(">>> ADD ATTACHMENT TO ISSUE OK");
     }
 
-    @Test
-    @Ignore
+    @Test(enabled = false)
     public void testGetIssueDetails() {
 
         String id = "10015";
@@ -231,7 +229,13 @@ public class JiraTest {
         System.out.println(">>> ADD ATTACHMENT TO ISSUE OK");
     }
 
-    @Test(priority = 7)
+    @Test(dependsOnMethods = {
+        "testCreateIssue",
+        "testAddCommentToIssue",
+        "testUpdateComment",
+        "testDeleteCommentFromIssue",
+        "testAddAttachmentToIssue"
+    })
     public void testDeleteIssue() {
 
         given()

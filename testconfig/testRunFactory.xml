@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "testng-1.0.dtd" >
+
+<suite name="suite3" preserve-order="true">
+    <test name="test3">
+        <classes>
+            <class name="com.lemakhno.mytests.factory.MyFactory"/>
+        </classes>
+    </test>
+</suite>

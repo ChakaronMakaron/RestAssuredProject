@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [suite3]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="test3(failed)" verbose="0">
+    <parameter name="name" value="Ivan"/>
+    <classes>
+      <class name="com.lemakhno.mytests.TestsForPractice">
+        <methods>
+          <include name="test3"/>
+          <include name="test4"/>
+        </methods>
+      </class> <!-- com.lemakhno.mytests.TestsForPractice -->
+    </classes>
+  </test> <!-- test3(failed) -->
+</suite> <!-- Failed suite [suite3] -->

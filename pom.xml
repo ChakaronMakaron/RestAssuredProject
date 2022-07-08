@@ -71,7 +71,7 @@
           <configuration>
 
             <suiteXmlFiles>
-              <suiteXmlFile>testconfig/testRun1.xml</suiteXmlFile>
+              <suiteXmlFile>testconfig/testRunForPractice.xml</suiteXmlFile>
             </suiteXmlFiles>
 
           </configuration>

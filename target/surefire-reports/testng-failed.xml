@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
-  <test thread-count="1" name="Surefire test(failed)" verbose="0">
+<suite name="Failed suite [suite3]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="test3(failed)" verbose="0">
+    <parameter name="name" value="Ivan"/>
     <classes>
-      <class name="com.lemakhno.mytests.JiraTest">
+      <class name="com.lemakhno.mytests.TestsForPractice">
         <methods>
-          <include name="testGetIssueDetails"/>
-          <include name="testAddCommentToIssue"/>
-          <include name="testAddAttachmentToIssue"/>
-          <include name="testCreateIssue"/>
-          <include name="testDeleteIssue"/>
+          <include name="test3"/>
+          <include name="test4"/>
         </methods>
-      </class> <!-- com.lemakhno.mytests.JiraTest -->
+      </class> <!-- com.lemakhno.mytests.TestsForPractice -->
     </classes>
-  </test> <!-- Surefire test(failed) -->
-</suite> <!-- Failed suite [Surefire suite] -->
+  </test> <!-- test3(failed) -->
+</suite> <!-- Failed suite [suite3] -->

@@ -1,4 +1,14 @@
 com\lemakhno\mytests\TestUtil.class
 com\lemakhno\mytests\FirstTestClass.class
 com\lemakhno\mytests\JiraTest.class
+com\lemakhno\mytests\entity\libraryentity\BookCreationResponse.class
 com\lemakhno\mytests\LibraryTest.class
+com\lemakhno\mytests\entity\serializationbigbody\BigBodyRequest.class
+com\lemakhno\mytests\entity\libraryentity\BookCreationRequest.class
+com\lemakhno\mytests\entity\Courses.class
+com\lemakhno\mytests\entity\GetCoursesResponse.class
+com\lemakhno\mytests\entity\libraryentity\BookDeletingResponse.class
+com\lemakhno\mytests\LibraryTestSerialDeserial.class
+com\lemakhno\mytests\entity\Course.class
+com\lemakhno\mytests\SerialDeserialSimpleTest.class
+com\lemakhno\mytests\entity\serializationbigbody\Location.class

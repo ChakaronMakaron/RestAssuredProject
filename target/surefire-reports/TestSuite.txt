@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.651 s - in TestSuite
+Tests run: 11, Failures: 2, Errors: 0, Skipped: 6, Time elapsed: 0.461 s <<< FAILURE! - in TestSuite
+test3(com.lemakhno.mytests.TestsForPractice)  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test3(TestsForPractice.java:34)
+
+test4(com.lemakhno.mytests.TestsForPractice)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at com.lemakhno.mytests.TestsForPractice.test4(TestsForPractice.java:40)
+
