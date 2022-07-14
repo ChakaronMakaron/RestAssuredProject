@@ -1,11 +1,17 @@
 package com.lemakhno.mytests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class TestsForPractice {
+
+    @BeforeSuite
+    public void beforeSuite() {
+        System.out.println("Before suite");
+    }
     
     @Test(groups = "parametrized")
     @Parameters({"name"})

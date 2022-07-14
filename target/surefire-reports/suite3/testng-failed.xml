@@ -8,6 +8,7 @@
         <methods>
           <include name="test3"/>
           <include name="test4"/>
+          <include name="beforeSuite"/>
         </methods>
       </class> <!-- com.lemakhno.mytests.TestsForPractice -->
     </classes>

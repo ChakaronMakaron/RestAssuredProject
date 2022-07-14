@@ -51,6 +51,8 @@ public class SerialDeserialSimpleTest {
         String response = TestUtil.jsonFileToString("src/json_examples/rahulCoursesJson.json");
         JsonPath jsonPath = new JsonPath(response);
         Map<String, Object> body = jsonPath.get("courses");
+        String penis = jsonPath.getString("penis");
+        System.out.println(">>> PENIS: " + penis);
         System.out.println(body);
     }
 
@@ -107,10 +109,20 @@ public class SerialDeserialSimpleTest {
 
         System.out.println(jsonPath.prettify());
 
+        // Response response =
         given().log().all()
             .body(requestBody)
         .when()
-            .get();
+            .get()
+        .then()
+            .extract()
+            .response();
+    }
+
+    @Test
+    public void test6() {
+
+        
     }
 }
 
